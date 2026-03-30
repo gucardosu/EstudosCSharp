@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Fundamentos_C_
+﻿namespace Fundamentos_C_
 {
     internal class Triangulo
     {
+        public double A;
+        public double B;
+        public double C;
     }
 }
