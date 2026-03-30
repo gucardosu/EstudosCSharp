@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace Fundamentos_C_
+namespace Fundamentos_C_.Logica
 {
     internal class Ex2
     {
