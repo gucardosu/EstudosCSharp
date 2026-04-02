@@ -7,28 +7,25 @@ namespace Fundamentos_C_
     {
         static void Main(string[] args)
         {
-            Produto p = new Produto();
+            Funcionario funcionario = new Funcionario();
 
-            Console.WriteLine("Entre os dados do produto");
-            Console.WriteLine("Nome: ");
-            p.Nome = Console.ReadLine();
-            Console.WriteLine("Entre com o preço do produto: ");
-            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.WriteLine("Quantidade em estoque: ");
-            p.Quantidade = int.Parse(Console.ReadLine());
+            Console.Write("Digite seu nome: ");
+            funcionario.Nome = Console.ReadLine();
 
-            Console.WriteLine("Dados do produto: " + p);
+            Console.Write("Digite seu salario bruto: ");
+            funcionario.SalarioBruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine();
-            Console.WriteLine("Digite o numero de produtos a ser adicionado no estoque: ");
-            int qte = int.Parse(Console.ReadLine());
-            p.AdicionarProdutos(qte);
-            Console.WriteLine("Dados atualizados: " + p);
+            Console.Write("Quanto de imposto tem?: ");
+            funcionario.Imposto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Digite o numero de produtos a ser removido do estoque: ");
-            qte = int.Parse(Console.ReadLine());
-            p.RemoverProdutos(qte);
-            Console.WriteLine("Dados atualizados: " + p);
+            Console.WriteLine("Funcionário: " + funcionario);
+
+            Console.Write("Deseja aumentar o salario em qual porcentagem? ");
+            double porcentagem = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            funcionario.AumentarSalario(porcentagem);
+
+            Console.WriteLine("Dados atualizados: " + funcionario);
+
         }
     }
 }
