@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Fundamentos_C_.POO_Classes;
 using System.Globalization;
 
 namespace Fundamentos_C_
@@ -9,35 +7,28 @@ namespace Fundamentos_C_
     {
         static void Main(string[] args)
         {
-            Triangulo x, y;
-            x = new Triangulo();
-            y = new Triangulo();
+            Produto p = new Produto();
 
-            Console.WriteLine("Entre com as medidas do trianngulo X: ");
-            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Entre os dados do produto");
+            Console.WriteLine("Nome: ");
+            p.Nome = Console.ReadLine();
+            Console.WriteLine("Entre com o preço do produto: ");
+            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Quantidade em estoque: ");
+            p.Quantidade = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Entre com as medidas do triangulo Y: ");
-            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Dados do produto: " + p);
 
-            double areaX = x.Area();
+            Console.WriteLine();
+            Console.WriteLine("Digite o numero de produtos a ser adicionado no estoque: ");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProdutos(qte);
+            Console.WriteLine("Dados atualizados: " + p);
 
-            double areaY = y.Area();
-
-            Console.WriteLine("Área de X = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
-            Console.WriteLine("Área de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
-
-            if (areaX > areaY)
-            {
-                Console.WriteLine("Maior área: X");
-            }
-            else
-            {
-                Console.WriteLine("Maior área: Y");
-            }
+            Console.WriteLine("Digite o numero de produtos a ser removido do estoque: ");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProdutos(qte);
+            Console.WriteLine("Dados atualizados: " + p);
         }
     }
 }
